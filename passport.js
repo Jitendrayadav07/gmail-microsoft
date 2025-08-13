@@ -13,7 +13,7 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_USER_ID,
       clientSecret: GOOGLE_CLIENT_USER_SECRET,
-      callbackURL: `http://localhost:5000/v1/auth/google/callback`,
+      callbackURL: `http://localhost:5002/v1/auth/google/callback`,
     },
     function (accessToken, refreshToken, profile, done) {
       done(null, profile);
@@ -24,7 +24,7 @@ passport.use(
 passport.use(new MicrosoftStrategy({
   clientID: MICROSOFT_CLIENT_ID,
   clientSecret: MICROSOFT_CLIENT_SECRET,
-  callbackURL: `http://localhost:5000/v1/auth/microsoft/callback`,
+  callbackURL: `http://localhost:5002/v1/auth/microsoft/callback`,
   scope: ['openid', 'user.read']
 }, function (accessToken, refreshToken, profile, done) {
   done(null, profile);
